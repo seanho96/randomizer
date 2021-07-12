@@ -1,0 +1,8 @@
+.cache/
+.vscode/
+.next/
+.slicemachine/
+.storybook/
+node_modules/
+public/
+scripts/
