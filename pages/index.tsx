@@ -3,13 +3,17 @@ import lottie from 'lottie-web'
 import Layout from '../components/Layout'
 
 const IndexPage = () => {
-  const [items, setItems] = useState([])
-  const [random, setRandom] = useState('')
-  const [text, setText] = useState('')
+  const [items, setItems] = useState<IItems[]>([])
+  const [random, setRandom] = useState<string>('')
+  const [text, setText] = useState<string>('')
+
+  interface IItems {
+    items: string[]
+  }
 
 
   const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'indigo']
-  const makeRepeated = (arr, repeats) => Array.from({ length: repeats }, () => arr).flat();
+  const makeRepeated = (arr: string[], repeats: number) => Array.from({ length: repeats }, () => arr).flat();
   const colorsArray = makeRepeated(colors, 5)
 
   const addItems = () => {
