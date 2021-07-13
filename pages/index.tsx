@@ -12,9 +12,9 @@ const IndexPage = () => {
   }
 
 
-  const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'indigo']
+  const borderColors = ['border-red-300', 'border-green-300', 'border-blue-300', 'border-yellow-300', 'border-orange-300', 'border-purple-300', 'border-pink-300', 'border-indigo-300']
   const makeRepeated = (arr, repeats) => Array.from({ length: repeats }, () => arr).flat();
-  const colorsArray = makeRepeated(colors, 5)
+  const borderColorsArray = makeRepeated(borderColors, 10)
 
   const addItems = () => {
     if(text) {
@@ -62,7 +62,7 @@ const IndexPage = () => {
           <div className="flex justify-center flex-wrap mb-2">
           {items.map((item, idx) => {
             return (
-            <div key={idx} className={`border-${colorsArray[idx]}-300 border-2 rounded-lg px-4 py-2 mb-2 mr-2`}>{item}</div>
+            <div key={idx} className={`${borderColorsArray[idx]} border-2 rounded-lg px-4 py-2 mb-2 mr-2`}>{item}</div>
           )})}
           </div>
           <input id="item-input" className="rounded-lg h-10 my-6 w-full p-4" placeholder="Insert item here" onChange={({ target }) => setText(target.value)} value={text}/>
