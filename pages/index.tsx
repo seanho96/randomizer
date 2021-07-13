@@ -13,7 +13,7 @@ const IndexPage = () => {
 
 
   const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'indigo']
-  const makeRepeated = (arr: string[], repeats: number) => Array.from({ length: repeats }, () => arr).flat();
+  const makeRepeated = (arr, repeats) => Array.from({ length: repeats }, () => arr).flat();
   const colorsArray = makeRepeated(colors, 5)
 
   const addItems = () => {
@@ -56,13 +56,14 @@ const IndexPage = () => {
 
   return (
     <Layout title="Randomizer">
-      <div className="min-h-screen py-20 bg-gray-300 py-6 flex flex-col justify-start items-center">
+      <div className="min-h-screen bg-gray-300 py-6 flex flex-col justify-start items-center">
         <div className="flex flex-col w-3/4 max-w-sm justify-start items-center">
-          <h1 className="text-xl mb-10">Randomizer! 👇</h1>
+          <h1 className="text-xl mb-10 relative">Randomizer! <div className="inline-block w-auto animate-bounce">👇</div></h1>
           <div className="flex justify-center flex-wrap mb-2">
-          {items.map((item, idx) => (
+          {items.map((item, idx) => {
+            return (
             <div key={idx} className={`border-${colorsArray[idx]}-300 border-2 rounded-lg px-4 py-2 mb-2 mr-2`}>{item}</div>
-            ))}
+          )})}
           </div>
           <input id="item-input" className="rounded-lg h-10 my-6 w-full p-4" placeholder="Insert item here" onChange={({ target }) => setText(target.value)} value={text}/>
           <div className="flex">
