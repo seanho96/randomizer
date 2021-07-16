@@ -32,6 +32,11 @@ const IndexPage = () => {
   const handleReset = () => {
     setItems([])
     setText('')
+    setRandom('')
+  }
+
+  const handleDelete = (e: any) => {
+    setItems(items.filter((item) => item !== e.target.innerHTML))
   }
 
   useEffect(() => {
@@ -62,7 +67,7 @@ const IndexPage = () => {
           <div className="flex justify-center flex-wrap mb-2">
           {items.map((item: {}, idx: number) => {
             return (
-            <div key={idx} className={`${borderColorsArray[idx]} border-2 rounded-lg px-4 py-2 mb-2 mr-2`}>{item}</div>
+            <div key={idx} className={`${borderColorsArray[idx]} border-2 rounded-lg px-4 py-2 mb-2 mr-2 cursor-pointer`} onClick={handleDelete}>{item}</div>
           )})}
           </div>
           <input id="item-input" className="rounded-lg h-10 my-6 w-full p-4" placeholder="Insert item here" onChange={({ target }) => setText(target.value)} value={text}/>
