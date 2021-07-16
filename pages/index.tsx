@@ -13,14 +13,14 @@ const IndexPage = () => {
 
   const addItems = () => {
     if(text) {
-      items.push(text)
+      setItems([...items, text])
     }
     setText('')
   }
 
   const handleEnter = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && text) {
-        items.push(text)
+        setItems([...items, text])
         setText('')
     }
 }
