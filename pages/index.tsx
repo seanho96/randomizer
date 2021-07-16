@@ -70,7 +70,7 @@ const IndexPage = () => {
             <button className="my-8 mr-4 px-8 py-3 bg-blue-100 rounded-lg hover:bg-blue-300 hover:text-white transition-colors	duration-300" onClick={addItems}>
                 Add
             </button>
-            <button className="my-8 mr-4 px-8 py-3 bg-green-100 rounded-lg hover:bg-red-300 hover:text-white transition-colors	duration-300" onClick={handleRandomize}>
+            <button className="my-8 mr-4 px-8 py-3 bg-green-100 rounded-lg hover:bg-green-300 hover:text-white transition-colors	duration-300" onClick={handleRandomize}>
                 Randomize
             </button>
             <button className="my-8 px-8 py-3 bg-red-100 rounded-lg hover:bg-red-300 hover:text-white transition-colors	duration-300" onClick={handleReset}>
