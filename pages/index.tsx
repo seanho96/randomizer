@@ -59,20 +59,30 @@ const IndexPage = () => {
     const [text, setText] = useState<string>('')
     const [animation_state, setAnimationState] = useState<string>('idle')
     const [bg, setBg] = useState<string>('bg-gray-100')
+    let counter = 0
 
     const borderColors = [
         'border-red-300',
         'border-green-300',
         'border-blue-300',
         'border-yellow-300',
-        'border-orange-300',
         'border-purple-300',
         'border-pink-300',
         'border-indigo-300'
     ]
+    const bgColors = [
+        'hover:bg-red-300',
+        'hover:bg-green-300',
+        'hover:bg-blue-300',
+        'hover:bg-yellow-300',
+        'hover:bg-purple-300',
+        'hover:bg-pink-300',
+        'hover:bg-indigo-300'
+    ]
     const makeRepeated = (arr: string[], repeats: number) =>
         Array.from({ length: repeats }, () => arr).flat()
     const borderColorsArray = makeRepeated(borderColors, 10)
+    const bgColorsArray = makeRepeated(bgColors, 10)
 
     const addItems = () => {
         if (text) {
@@ -214,11 +224,12 @@ const IndexPage = () => {
                             Randomizer! <div className="inline-block w-auto animate-bounce">👇</div>
                         </h1>
                         <div className="flex justify-center flex-wrap mb-2">
-                            {items.map((item: {}, idx: number) => {
+                            {items.map((item: {}) => {
+                                counter++
                                 return (
                                     <div
-                                        key={idx}
-                                        className={`${borderColorsArray[idx]} border-2 rounded-lg px-4 py-2 mb-2 mr-2 cursor-pointer`}
+                                        key={counter}
+                                        className={`${borderColorsArray[counter]} border-2 rounded-lg px-4 py-2 mb-2 mr-2 cursor-pointer ${bgColorsArray[counter]}`}
                                         onClick={handleDelete}
                                     >
                                         {item}
