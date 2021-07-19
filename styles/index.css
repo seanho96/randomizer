@@ -3,3 +3,28 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+.notes-container {
+    filter: url(#gooey-effect);
+}
+
+.add-button button {
+    z-index: 21;
+    outline: none;
+    border: none;
+}
+
+.selector {
+    margin: 18px auto;
+    height: 32px;
+    width: 32px;
+    margin: 18px auto;
+    border-radius: 100%;
+    position: absolute;
+    top: -28px;
+    cursor: pointer;
+}
+
+#gooey-filter {
+    display: none;
+}
