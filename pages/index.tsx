@@ -233,7 +233,7 @@ const IndexPage = () => {
                             onChange={({ target }) => setText(target.value)}
                             value={text}
                         />
-                        <div className="flex flex-wrap justify-between mt-8">
+                        <div className="flex flex-wrap justify-between my-8">
                             <button
                                 className="mb-2 mx-1 px-8 py-3 bg-blue-300 rounded-lg hover:bg-blue-400 hover:text-white transition-colors	duration-300"
                                 onClick={addItems}
